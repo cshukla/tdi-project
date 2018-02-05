@@ -1,0 +1,34 @@
+---
+title: "Epl_Big6_Mid6"
+author: "Chinmay Shukla"
+date: "2/5/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+## EPL Mid Table Performance
+
+```{r midTable, echo=FALSE}
+epl <- read_tsv('~/Documents/Research/tdi-project/project/data/eplBig6.results.tsv')
+ggplot(epl, aes(x=EventualPosition, y=Middle7Prcnt)) + geom_point() + geom_smooth(method='lm') + theme_bw()
+
+```
+
+
+```{r midTableLM, echo=FALSE}
+summary(lm(EventualPosition ~ Middle7Prcnt, epl))
+```
+
+## EPL Big 6 Performance
+
+```{r pressure, echo=FALSE}
+ggplot(epl, aes(x=EventualPosition, y=Big6Prcnt)) + geom_point() + geom_smooth(method='lm') + theme_bw()
+```
+
+```{r midTableLM, echo=FALSE}
+summary(lm(EventualPosition ~ Big6Prcnt, epl))
+```
