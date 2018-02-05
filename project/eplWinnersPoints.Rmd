@@ -20,10 +20,10 @@ library(tidyverse)
 
 ### Load data from R object.
 
-Previously, I downloaded JSON data from a few sources (ESPN API mainly), cleaned it up and made a EPL object from it. It has been saved here. The first step of the analysis is to load this object (a tibbled called EPL).
+Previously, I downloaded JSON data from a few sources (ESPN API mainly), cleaned it up and made a EPL object from it. It has been saved here. The first step of the analysis is to load this object (a tibble called EPL).
 
 ```{r loadData, cache=FALSE, message=FALSE}
-epl <- readRDS('~/Documents/Research/OTSD/data/epl.rds')
+epl <- readRDS('~/Documents/Research/tdi-project/project/data/epl.rds')
 ```
 
 ### How many points are required to win the EPL?
